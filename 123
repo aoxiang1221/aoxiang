@@ -1,13 +1,12 @@
-
-Youtube小露分享 = vmess, 109.wgong.xyz, 52209, chacha20-ietf-poly1305, "08103798-414e-32b6-8748-2507732d2c51", group=V2RayProvider
-Youtube小露分享 2 = vmess, 105.wgong.xyz, 52205, chacha20-ietf-poly1305, "08103798-414e-32b6-8748-2507732d2c51", group=V2RayProvider
-Youtube小露分享 3 = vmess, 86.wgong.xyz, 52286, chacha20-ietf-poly1305, "08103798-414e-32b6-8748-2507732d2c51", group=V2RayProvider
-Youtube小露分享 4 = vmess, 133.wgong.xyz, 52333, chacha20-ietf-poly1305, "08103798-414e-32b6-8748-2507732d2c51", group=V2RayProvider
-Youtube小露分享 5 = vmess, 128.wgong.xyz, 52228, chacha20-ietf-poly1305, "08103798-414e-32b6-8748-2507732d2c51", group=V2RayProvider
-Youtube小露分享 6 = vmess, 135.wgong.xyz, 52335, chacha20-ietf-poly1305, "08103798-414e-32b6-8748-2507732d2c51", group=V2RayProvider
-Youtube小露分享 7 = vmess, 125.wgong.xyz, 52225, chacha20-ietf-poly1305, "08103798-414e-32b6-8748-2507732d2c51", group=V2RayProvider
-Youtube小露分享 8 = vmess, 82.wgong.xyz, 52282, chacha20-ietf-poly1305, "08103798-414e-32b6-8748-2507732d2c51", group=V2RayProvider
-Youtube小露分享 9 = vmess, 103.wgong.xyz, 52203, chacha20-ietf-poly1305, "08103798-414e-32b6-8748-2507732d2c51", group=V2RayProvider
-Youtube小露分享 10 = vmess, 81.wgong.xyz, 52281, chacha20-ietf-poly1305, "08103798-414e-32b6-8748-2507732d2c51", group=V2RayProvider
-Youtube小露分享 11 = vmess, 126.wgong.xyz, 52226, chacha20-ietf-poly1305, "08103798-414e-32b6-8748-2507732d2c51", group=V2RayProvider
-Youtube小露分享 12 = vmess, 131.wgong.xyz, 52331, chacha20-ietf-poly1305, "08103798-414e-32b6-8748-2507732d2c51", group=V2RayProvider
+Youtube小露分享 = vmess, 109.wgong.xyz, 52209, username=08103798-414e-32b6-8748-2507732d2c51, tls=false, skip-cert-verify=true, tfo=false, udp-relay=true
+Youtube小露分享 2 = vmess, 105.wgong.xyz, 52205, username=08103798-414e-32b6-8748-2507732d2c51, tls=false, skip-cert-verify=true, tfo=false, udp-relay=true
+Youtube小露分享 3 = vmess, 86.wgong.xyz, 52286, username=08103798-414e-32b6-8748-2507732d2c51, tls=false, skip-cert-verify=true, tfo=false, udp-relay=true
+Youtube小露分享 4 = vmess, 133.wgong.xyz, 52333, username=08103798-414e-32b6-8748-2507732d2c51, tls=false, skip-cert-verify=true, tfo=false, udp-relay=true
+Youtube小露分享 5 = vmess, 128.wgong.xyz, 52228, username=08103798-414e-32b6-8748-2507732d2c51, tls=false, skip-cert-verify=true, tfo=false, udp-relay=true
+Youtube小露分享 6 = vmess, 135.wgong.xyz, 52335, username=08103798-414e-32b6-8748-2507732d2c51, tls=false, skip-cert-verify=true, tfo=false, udp-relay=true
+Youtube小露分享 7 = vmess, 125.wgong.xyz, 52225, username=08103798-414e-32b6-8748-2507732d2c51, tls=false, skip-cert-verify=true, tfo=false, udp-relay=true
+Youtube小露分享 8 = vmess, 82.wgong.xyz, 52282, username=08103798-414e-32b6-8748-2507732d2c51, tls=false, skip-cert-verify=true, tfo=false, udp-relay=true
+Youtube小露分享 9 = vmess, 103.wgong.xyz, 52203, username=08103798-414e-32b6-8748-2507732d2c51, tls=false, skip-cert-verify=true, tfo=false, udp-relay=true
+Youtube小露分享 10 = vmess, 81.wgong.xyz, 52281, username=08103798-414e-32b6-8748-2507732d2c51, tls=false, skip-cert-verify=true, tfo=false, udp-relay=true
+Youtube小露分享 11 = vmess, 126.wgong.xyz, 52226, username=08103798-414e-32b6-8748-2507732d2c51, tls=false, skip-cert-verify=true, tfo=false, udp-relay=true
+Youtube小露分享 12 = vmess, 131.wgong.xyz, 52331, username=08103798-414e-32b6-8748-2507732d2c51, tls=false, skip-cert-verify=true, tfo=false, udp-relay=true
