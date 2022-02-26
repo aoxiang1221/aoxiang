@@ -1,3 +1,7 @@
-🇸🇬 新加坡03 = custom, sg3.lingfeiling.tk, 25147, chacha20-ietf-poly1305, 5a3ddc07-6db5-4adf-b9d5-4651f7012076, https://github.com/ConnersHua/SSEncrypt/raw/master/SSEncrypt.module, tfo=false, udp-relay=false
-🇸🇬 新加坡02 = custom, sg2.lingfeiling.tk, 35641, chacha20-ietf-poly1305, 5a3ddc07-6db5-4adf-b9d5-4651f7012076, https://github.com/ConnersHua/SSEncrypt/raw/master/SSEncrypt.module, tfo=false, udp-relay=false
-🇸🇬 新加坡01 = custom, sg1.lingfeiling.tk, 25481, chacha20-ietf-poly1305, 5a3ddc07-6db5-4adf-b9d5-4651f7012076, https://github.com/ConnersHua/SSEncrypt/raw/master/SSEncrypt.module, tfo=false, udp-relay=false
+新加坡01=ss,sg1.lingfeiling.tk,25481,encrypt-method=chacha20-ietf-poly1305,password=5a3ddc07-6db5-4adf-b9d5-4651f7012076,tfo=true,udp-relay=true
+新加坡02=ss,sg2.lingfeiling.tk,35641,encrypt-method=chacha20-ietf-poly1305,password=5a3ddc07-6db5-4adf-b9d5-4651f7012076,tfo=true,udp-relay=true
+新加坡03=ss,sg3.lingfeiling.tk,25147,encrypt-method=chacha20-ietf-poly1305,password=5a3ddc07-6db5-4adf-b9d5-4651f7012076,tfo=true,udp-relay=true
+韩国01=ss,kr1.lingfeiling.tk,25841,encrypt-method=chacha20-ietf-poly1305,password=5a3ddc07-6db5-4adf-b9d5-4651f7012076,tfo=true,udp-relay=true
+美国01=ss,us1.lingfeiling.tk,23514,encrypt-method=chacha20-ietf-poly1305,password=5a3ddc07-6db5-4adf-b9d5-4651f7012076,tfo=true,udp-relay=true
+新加坡04=ss,sg4.lingfeiling.tk,14364,encrypt-method=chacha20-ietf-poly1305,password=5a3ddc07-6db5-4adf-b9d5-4651f7012076,tfo=true,udp-relay=true
+日本01=ss,jp1.lingfeiling.tk,42514,encrypt-method=chacha20-ietf-poly1305,password=5a3ddc07-6db5-4adf-b9d5-4651f7012076,tfo=true,udp-relay=true
