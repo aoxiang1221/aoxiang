@@ -11,17 +11,7 @@ hosts:
 dns:
 enable: ture
 ipv6: false
-default-nameserver:
-    - 114.114.114.114
-    - 8.8.8.8
 use-hosts: true
-hosts:
-  'mtalk.google.com': 108.177.125.188
-fake-ip-filter:
-  - mtalk.google.com
-nameserver:
-    - 114.114.114.114
-    - 8.8.8.8
     
 rule-providers:
   anti-ad_clash:
@@ -77,7 +67,6 @@ proxy-groups:
     proxies:
       - DIRECT
       - REJECT
-
 
 proxy-providers:
   clash-jichang:
