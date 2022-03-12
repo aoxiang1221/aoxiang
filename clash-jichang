@@ -16,3 +16,9 @@ proxies:
     
     - {name: 🐮🍺, server: 43.154.108.90, port: 31455, type: vmess, uuid: 13230594-f683-4cd1-e1a7-03797f34227a, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false}
     - {name: imkcp白嫖, server: 104.24.34.233, port: 443, type: vmess, uuid: 1c8f1d5c-c9b1-46be-d034-c649b006b15d, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, servername: kcpblog.tk, network: ws, ws-opts: {path: /, headers: {Host: kcpblog.tk}}}
+  
+    - {name: 🇭🇰 香港 01, server: az01.thenodemoon365.xyz, port: 20000, type: trojan, password: f5937a46-7fb1-480f-95d5-abe8f1dad53f, sni: ga.thenodemoon365.xyz, skip-cert-verify: false}
+    - {name: 🇰🇷 韩国 01, server: az01.thenodemoon365.xyz, port: 20001, type: trojan, password: f5937a46-7fb1-480f-95d5-abe8f1dad53f, sni: ga.thenodemoon365.xyz, skip-cert-verify: false}
+    - {name: 🇺🇸 美国 01, server: az01.thenodemoon365.xyz, port: 20002, type: trojan, password: f5937a46-7fb1-480f-95d5-abe8f1dad53f, sni: ga.thenodemoon365.xyz, skip-cert-verify: false}
+    - {name: 🇸🇬 新加坡 01, server: az01.thenodemoon365.xyz, port: 20003, type: trojan, password: f5937a46-7fb1-480f-95d5-abe8f1dad53f, sni: ga.thenodemoon365.xyz, skip-cert-verify: false}
+    - {name: 🇬🇧 英国 01, server: az01.thenodemoon365.xyz, port: 20004, type: trojan, password: f5937a46-7fb1-480f-95d5-abe8f1dad53f, sni: ga.thenodemoon365.xyz, skip-cert-verify: false}
