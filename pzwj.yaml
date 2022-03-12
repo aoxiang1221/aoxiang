@@ -1,0 +1,97 @@
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
+
+hosts:
+'mtalk.google.com': 108.177.125.188
+
+dns:
+enable: ture
+ipv6: false
+default-nameserver:
+    - 114.114.114.114
+    - 8.8.8.8
+use-hosts: true
+fake-ip-filter:
+  - mtalk.google.com
+nameserver:
+    - 114.114.114.114
+    - 8.8.8.8
+    
+rule-providers:
+  anti-ad_clash:
+    type: http
+    behavior: domain
+    url: "https://anti-ad.net/clash.yaml"
+    path: ./ad-block/anti-ad_clash.yaml
+    interval: 86400
+  clash-rules:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt"
+    path: ./ad-block/clash-rules.yaml
+    interval: 86400    
+
+proxies:
+  - {name: 🇺🇸 美国, server: 141.101.121.239, port: 443, type: vmess, uuid: ad806487-2d26-4636-98b6-ab85cc8521f7, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, servername: fragrant-fire-4eca.aoxiang.workers.dev, network: ws, ws-opts: {path: /, headers: {Host: fragrant-fire-4eca.aoxiang.workers.dev}}}
+  - name: "V2ray代理"
+    type: socks5
+    server: 127.0.0.1
+    port: 10808
+    # username: username
+    # password: password
+    # tls: true
+    # skip-cert-verify: true
+    udp: true
+
+proxy-groups:
+  - name: 节点选择
+    type: select
+    proxies:
+      - 机场节点
+      - HeroKu
+      - 手动代理
+  - name: 机场节点
+    type: select
+    use:
+      - clash-jichang
+  - name: 手动代理
+    type: select
+    proxies:
+      - V2ray代理
+  - name: HeroKu
+    type: select
+    proxies:
+      - 🇺🇸 美国
+  - name: 直连
+    type: select
+    proxies:
+      - DIRECT
+  - name: 拦截
+    type: select
+    proxies:
+      - DIRECT
+      - REJECT
+
+
+proxy-providers:
+  clash-jichang:
+    type: http
+    url: "https://raw.githubusercontent.com/aoxiang1221/aoxiang/gh-pages/clash-jichang"
+    interval: 3600
+    path: ./clash-jichang.yaml
+    health-check:
+      enable: true
+      interval: 600
+      # lazy: true
+      url: http://www.gstatic.com/generate_204
+
+rules:
+  - RULE-SET,clash-rules,拦截
+  - RULE-SET,anti-ad_clash,拦截
+  - PROCESS-NAME,com.tencent.mm,节点选择
+  - GEOIP,CN,直连
+  - MATCH,节点选择
