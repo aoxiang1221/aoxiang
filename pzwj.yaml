@@ -44,6 +44,7 @@ proxy-groups:
     type: select
     proxies:
       - 机场节点
+      - 自动选择
       - HeroKu
       - 手动代理
   - name: 机场节点
