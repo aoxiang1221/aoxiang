@@ -50,6 +50,12 @@ proxy-groups:
     type: select
     use:
       - clash-jichang
+  - name: 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    use:
+      - clash-jichang
   - name: 手动代理
     type: select
     proxies:
