@@ -13,3 +13,6 @@ proxies:
     - { name: 13-US-Amazon, type: trojan, server: TJ-13.t8737.shop, port: 11223, password: b79f9118-5827-49d5-8df0-867fe8fb36e4, udp: true, sni: TJ-13.t8737.shop, skip-cert-verify: true }
     - { name: 14-US-Amazon, type: trojan, server: TJ-14.t8737.shop, port: 11223, password: b79f9118-5827-49d5-8df0-867fe8fb36e4, udp: true, sni: TJ-14.t8737.shop, skip-cert-verify: true }
     - { name: 15-US-Amazon, type: trojan, server: TJ-15.t8737.shop, port: 11223, password: b79f9118-5827-49d5-8df0-867fe8fb36e4, udp: true, sni: TJ-15.t8737.shop, skip-cert-verify: true }
+    
+    - {name: 🐮🍺, server: 43.154.108.90, port: 31455, type: vmess, uuid: 13230594-f683-4cd1-e1a7-03797f34227a, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false}
+    - {name: imkcp白嫖, server: 104.24.34.233, port: 443, type: vmess, uuid: 1c8f1d5c-c9b1-46be-d034-c649b006b15d, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, servername: kcpblog.tk, network: ws, ws-opts: {path: /, headers: {Host: kcpblog.tk}}}
