@@ -22,3 +22,5 @@ proxies:
     - {name: 🇺🇸 美国 01, server: az01.thenodemoon365.xyz, port: 20002, type: trojan, password: f5937a46-7fb1-480f-95d5-abe8f1dad53f, sni: ga.thenodemoon365.xyz, skip-cert-verify: false}
     - {name: 🇸🇬 新加坡 01, server: az01.thenodemoon365.xyz, port: 20003, type: trojan, password: f5937a46-7fb1-480f-95d5-abe8f1dad53f, sni: ga.thenodemoon365.xyz, skip-cert-verify: false}
     - {name: 🇬🇧 英国 01, server: az01.thenodemoon365.xyz, port: 20004, type: trojan, password: f5937a46-7fb1-480f-95d5-abe8f1dad53f, sni: ga.thenodemoon365.xyz, skip-cert-verify: false}
+    
+    - {name: 🇭🇰 香港高速, server: www.958632.xyz, port: 443, type: vmess, uuid: 9eaa06f2-7e1a-4675-abaa-3fcd57aaf27a, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, servername: www.958632.xyz, network: ws, ws-opts: {path: /hate, headers: {Host: www.958632.xyz}}}
