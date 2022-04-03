@@ -1,26 +1,2 @@
 proxies:
-    - { name: 01-HK, type: trojan, server: TJ-01.t8737.shop, port: 11223, password: b79f9118-5827-49d5-8df0-867fe8fb36e4, udp: true, sni: TJ-01.t8737.shop, skip-cert-verify: true }
-    - { name: 02-HK, type: trojan, server: TJ-02.t8737.shop, port: 11223, password: b79f9118-5827-49d5-8df0-867fe8fb36e4, udp: true, sni: TJ-02.t8737.shop, skip-cert-verify: true }
-    - { name: 03-HK, type: trojan, server: TJ-03.t8737.shop, port: 11223, password: b79f9118-5827-49d5-8df0-867fe8fb36e4, udp: true, sni: TJ-03.t8737.shop, skip-cert-verify: true }
-    - { name: 04-HK, type: trojan, server: TJ-04.t8737.shop, port: 11223, password: b79f9118-5827-49d5-8df0-867fe8fb36e4, udp: true, sni: TJ-04.t8737.shop, skip-cert-verify: true }
-    - { name: 05-KR, type: trojan, server: TJ-05.t8737.shop, port: 11223, password: b79f9118-5827-49d5-8df0-867fe8fb36e4, udp: true, sni: TJ-05.t8737.shop, skip-cert-verify: true }
-    - { name: 06-KR, type: trojan, server: TJ-06.t8737.shop, port: 11223, password: b79f9118-5827-49d5-8df0-867fe8fb36e4, udp: true, sni: TJ-06.t8737.shop, skip-cert-verify: true }
-    - { name: 07-KR, type: trojan, server: TJ-07.t8737.shop, port: 11223, password: b79f9118-5827-49d5-8df0-867fe8fb36e4, udp: true, sni: TJ-07.t8737.shop, skip-cert-verify: true }
-    - { name: 08-KR, type: trojan, server: TJ-08.t8737.shop, port: 11223, password: b79f9118-5827-49d5-8df0-867fe8fb36e4, udp: true, sni: TJ-08.t8737.shop, skip-cert-verify: true }
-    - { name: 10-SG-DigitalOcean, type: trojan, server: TJ-10.t8737.shop, port: 11223, password: b79f9118-5827-49d5-8df0-867fe8fb36e4, udp: true, sni: TJ-10.t8737.shop, skip-cert-verify: true }
-    - { name: 11-SG-DigitalOcean, type: trojan, server: TJ-11.t8737.shop, port: 11223, password: b79f9118-5827-49d5-8df0-867fe8fb36e4, udp: true, sni: TJ-11.t8737.shop, skip-cert-verify: true }
-    - { name: 12-SG-DigitalOcean, type: trojan, server: TJ-12.t8737.shop, port: 11223, password: b79f9118-5827-49d5-8df0-867fe8fb36e4, udp: true, sni: TJ-12.t8737.shop }
-    - { name: 13-US-Amazon, type: trojan, server: TJ-13.t8737.shop, port: 11223, password: b79f9118-5827-49d5-8df0-867fe8fb36e4, udp: true, sni: TJ-13.t8737.shop, skip-cert-verify: true }
-    - { name: 14-US-Amazon, type: trojan, server: TJ-14.t8737.shop, port: 11223, password: b79f9118-5827-49d5-8df0-867fe8fb36e4, udp: true, sni: TJ-14.t8737.shop, skip-cert-verify: true }
-    - { name: 15-US-Amazon, type: trojan, server: TJ-15.t8737.shop, port: 11223, password: b79f9118-5827-49d5-8df0-867fe8fb36e4, udp: true, sni: TJ-15.t8737.shop, skip-cert-verify: true }
-    
-    - {name: 🐮🍺, server: 43.154.108.90, port: 31455, type: vmess, uuid: 13230594-f683-4cd1-e1a7-03797f34227a, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false}
-    - {name: imkcp白嫖, server: 104.24.34.233, port: 443, type: vmess, uuid: 1c8f1d5c-c9b1-46be-d034-c649b006b15d, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, servername: kcpblog.tk, network: ws, ws-opts: {path: /, headers: {Host: kcpblog.tk}}}
   
-    - {name: 🇭🇰 香港 01, server: az01.thenodemoon365.xyz, port: 20000, type: trojan, password: f5937a46-7fb1-480f-95d5-abe8f1dad53f, sni: ga.thenodemoon365.xyz, skip-cert-verify: false}
-    - {name: 🇰🇷 韩国 01, server: az01.thenodemoon365.xyz, port: 20001, type: trojan, password: f5937a46-7fb1-480f-95d5-abe8f1dad53f, sni: ga.thenodemoon365.xyz, skip-cert-verify: false}
-    - {name: 🇺🇸 美国 01, server: az01.thenodemoon365.xyz, port: 20002, type: trojan, password: f5937a46-7fb1-480f-95d5-abe8f1dad53f, sni: ga.thenodemoon365.xyz, skip-cert-verify: false}
-    - {name: 🇸🇬 新加坡 01, server: az01.thenodemoon365.xyz, port: 20003, type: trojan, password: f5937a46-7fb1-480f-95d5-abe8f1dad53f, sni: ga.thenodemoon365.xyz, skip-cert-verify: false}
-    - {name: 🇬🇧 英国 01, server: az01.thenodemoon365.xyz, port: 20004, type: trojan, password: f5937a46-7fb1-480f-95d5-abe8f1dad53f, sni: ga.thenodemoon365.xyz, skip-cert-verify: false}
-    
-    - {name: 🇭🇰 香港高速, server: www.958632.xyz, port: 443, type: vmess, uuid: 9eaa06f2-7e1a-4675-abaa-3fcd57aaf27a, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, servername: www.958632.xyz, network: ws, ws-opts: {path: /hate, headers: {Host: www.958632.xyz}}}
