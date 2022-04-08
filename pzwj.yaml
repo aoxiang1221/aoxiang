@@ -5,14 +5,16 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 
-hosts:
-'mtalk.google.com': 108.177.125.188
-
 dns:
-enable: ture
+enable: true
 ipv6: false
 use-hosts: true
-    
+fake-ip-filter:
+  - 'mtalk.google.com'
+
+hosts:
+  'mtalk.google.com': 108.177.125.188
+
 rule-providers:
   anti-ad_clash:
     type: http
@@ -20,15 +22,15 @@ rule-providers:
     url: "https://anti-ad.net/clash.yaml"
     path: ./ad-block/anti-ad_clash.yaml
     interval: 86400
+  
   clash-rules:
     type: http
     behavior: domain
     url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt"
     path: ./ad-block/clash-rules.yaml
-    interval: 86400    
+    interval: 86400
 
 proxies:
-  - {name: 🇺🇸 美国, server: 141.101.121.239, port: 443, type: vmess, uuid: ad806487-2d26-4636-98b6-ab85cc8521f7, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, servername: fragrant-fire-4eca.aoxiang.workers.dev, network: ws, ws-opts: {path: /, headers: {Host: fragrant-fire-4eca.aoxiang.workers.dev}}}
   - name: "V2ray代理"
     type: socks5
     server: 127.0.0.1
@@ -38,33 +40,41 @@ proxies:
     # tls: true
     # skip-cert-verify: true
     udp: true
+  - {name: 🇭🇰 微软云 香港 5Gbps, server: trojan-azure-hk-1.forwardserver.xyz, port: 8443, type: trojan, password: DaoZhuYYDS, sni: trojan-azure-hk-1.forwardserver.xyz, skip-cert-verify: false}
 
 proxy-groups:
   - name: 节点选择
     type: select
     proxies:
+      - 一元机场
       - 机场节点
       - 自动选择
-      - HeroKu
       - 手动代理
+      - 整合
+  - name: 一元机场
+    type: select
+    use:
+      - yiyuanjichang
   - name: 机场节点
     type: select
     use:
-      - clash-jichang
+      - startmy
+      - dadiangan
+  - name: 整合
+    type: select
+    proxies:
+      - 🇭🇰 微软云 香港 5Gbps
   - name: 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     use:
-      - clash-jichang
+      - startmy
+      - dadiangan
   - name: 手动代理
     type: select
     proxies:
       - V2ray代理
-  - name: HeroKu
-    type: select
-    proxies:
-      - 🇺🇸 美国
   - name: 直连
     type: select
     proxies:
@@ -72,24 +82,54 @@ proxy-groups:
   - name: 拦截
     type: select
     proxies:
-      - DIRECT
       - REJECT
+      - DIRECT
+      - 节点选择
 
 proxy-providers:
-  clash-jichang:
+  yiyuanjichang:
     type: http
-    url: "https://raw.githubusercontent.com/aoxiang1221/aoxiang/gh-pages/clash-jichang"
+    url: "https://xn--4gq62f52gdss.com/api/v1/client/subscribe?token=0594ad8fb0d510cade0a33d3d6389d13"
     interval: 3600
-    path: ./clash-jichang.yaml
+    path: ./yiyuanjichang.yaml
     health-check:
       enable: true
       interval: 600
       # lazy: true
       url: http://www.gstatic.com/generate_204
 
+  startmy:
+    type: http
+    url: "https://startmy.cc/link/W1ADHzYPJYV5Bxam?clash=1"
+    interval: 3600
+    path: ./startmy.yaml
+    health-check:
+      enable: true
+      interval: 600
+      # lazy: true
+      url: http://www.gstatic.com/generate_204
+  
+  dadiangan:
+    type: http
+    url: "https://dadiangan.xyz/api/v1/client/subscribe?token=2e66b83f06771a39bade477c69ac4849&flag=clash"
+    interval: 3600
+    path: ./dadiangan.yaml
+    health-check:
+      enable: true
+      interval: 600
+      # lazy: true
+      url: http://www.gstatic.com/generate_204"
+
 rules:
+#广告拦截
   - RULE-SET,clash-rules,拦截
   - RULE-SET,anti-ad_clash,拦截
+
+#应用分流
   - PROCESS-NAME,com.tencent.mm,节点选择
+  - PROCESS-NAME,com.vanced.android.apps.youtube.music,sspool-US
+  - PROCESS-NAME,cn.gov.pbc.dcep,直连
+
+#绕过大陆
   - GEOIP,CN,直连
   - MATCH,节点选择
