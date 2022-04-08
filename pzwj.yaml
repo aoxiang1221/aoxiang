@@ -127,7 +127,6 @@ rules:
 
 #应用分流
   - PROCESS-NAME,com.tencent.mm,节点选择
-  - PROCESS-NAME,com.vanced.android.apps.youtube.music,sspool-US
   - PROCESS-NAME,cn.gov.pbc.dcep,直连
 
 #绕过大陆
