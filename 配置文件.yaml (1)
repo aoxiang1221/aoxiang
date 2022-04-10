@@ -1,0 +1,66 @@
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
+
+dns:
+enable: true
+ipv6: false
+use-hosts: true
+fake-ip-filter:
+  - 'mtalk.google.com'
+
+hosts:
+  'mtalk.google.com': 108.177.125.188
+
+rule-providers:
+  anti-ad_clash:
+    type: http
+    behavior: domain
+    url: "https://anti-ad.net/clash.yaml"
+    path: ./ad-block/anti-ad_clash.yaml
+    interval: 86400
+
+proxies:
+
+proxy-groups:
+  - name: 节点选择
+    type: select
+    proxies:
+      - 手动选择
+      - 自动选择
+  - name: 手动选择
+    type: select
+    use:
+      - a
+  - name: 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    use:
+      - a
+
+proxy-providers:
+  a:
+    type: http
+    url: "https://raw.githubusercontent.com/aoxiang1221/aoxiang/gh-pages/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.yaml"
+    interval: 3600
+    path: ./a.yaml
+    health-check:
+      enable: true
+      interval: 600
+      # lazy: true
+      url: http://www.gstatic.com/generate_204
+
+rules:
+#广告拦截
+  - RULE-SET,anti-ad_clash,REJECT
+
+#应用分流
+  - PROCESS-NAME,com.tencent.mm,节点选择
+
+#绕过大陆
+  - GEOIP,CN,DIRECT
+  - MATCH,节点选择
