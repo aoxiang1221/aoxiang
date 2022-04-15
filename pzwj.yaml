@@ -1,0 +1,84 @@
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
+
+dns:
+enable: true
+ipv6: false
+use-hosts: true
+fake-ip-filter:
+  - 'mtalk.google.com'
+
+hosts:
+  'mtalk.google.com': 108.177.125.188
+
+rule-providers:
+  anti-ad_clash:
+    type: http
+    behavior: domain
+    url: "https://anti-ad.net/clash.yaml"
+    path: ./ad-block/anti-ad_clash.yaml
+    interval: 86400
+
+proxies:
+  - name: "V2ray代理"
+    type: socks5
+    server: 127.0.0.1
+    port: 10808
+    # username: username
+    # password: password
+    # tls: true
+    # skip-cert-verify: true
+    udp: true
+  - {name: 🇭🇰 微软云 香港 5Gbps, server: trojan-azure-hk-1.forwardserver.xyz, port: 8443, type: trojan, password: DaoZhuYYDS, sni: trojan-azure-hk-1.forwardserver.xyz, skip-cert-verify: false}
+
+proxy-groups:
+  - name: 节点选择
+    type: select
+    proxies:
+      - 一元机场
+      - 自动选择
+      - 手动代理
+      - 整合
+  - name: 一元机场
+    type: select
+    use:
+      - yiyuanjichang
+  - name: 整合
+    type: select
+    proxies:
+      - 🇭🇰 微软云 香港 5Gbps
+  - name: 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    use:
+  - name: 手动代理
+    type: select
+    proxies:
+      - V2ray代理
+
+proxy-providers:
+  yiyuanjichang:
+    type: http
+    url: "https://xn--4gq62f52gdss.com/api/v1/client/subscribe?token=16735085a048e86926f9d795c2e3a8ca"
+    interval: 3600
+    path: ./yiyuanjichang.yaml
+    health-check:
+      enable: true
+      interval: 600
+      # lazy: true
+      url: http://www.gstatic.com/generate_204
+rules:
+#广告拦截
+  - RULE-SET,anti-ad_clash,REJECT
+
+#应用分流
+  - PROCESS-NAME,com.tencent.mm,节点选择
+
+#绕过大陆
+  - GEOIP,CN,DIRECT
+  - MATCH,节点选择
