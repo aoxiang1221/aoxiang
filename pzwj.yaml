@@ -22,13 +22,6 @@ rule-providers:
     url: "https://anti-ad.net/clash.yaml"
     path: ./ad-block/anti-ad_clash.yaml
     interval: 86400
-  
-  clash-rules:
-    type: http
-    behavior: domain
-    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt"
-    path: ./ad-block/clash-rules.yaml
-    interval: 86400
 
 proxies:
   - name: "V2ray代理"
@@ -55,11 +48,6 @@ proxy-groups:
     type: select
     use:
       - yiyuanjichang
-  - name: 机场节点
-    type: select
-    use:
-      - startmy
-      - dadiangan
   - name: 整合
     type: select
     proxies:
@@ -69,27 +57,16 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     use:
-      - startmy
-      - dadiangan
+      - a
   - name: 手动代理
     type: select
     proxies:
       - V2ray代理
-  - name: 直连
-    type: select
-    proxies:
-      - DIRECT
-  - name: 拦截
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
-      - 节点选择
 
 proxy-providers:
   yiyuanjichang:
     type: http
-    url: "https://xn--4gq62f52gdss.com/api/v1/client/subscribe?token=0594ad8fb0d510cade0a33d3d6389d13"
+    url: "https://xn--4gq62f52gdss.com/api/v1/client/subscribe?token=16735085a048e86926f9d795c2e3a8ca"
     interval: 3600
     path: ./yiyuanjichang.yaml
     health-check:
@@ -97,38 +74,24 @@ proxy-providers:
       interval: 600
       # lazy: true
       url: http://www.gstatic.com/generate_204
-
-  startmy:
+  a:
     type: http
-    url: "https://startmy.cc/link/W1ADHzYPJYV5Bxam?clash=1"
+    url: "https://raw.githubusercontent.com/aoxiang1221/aoxiang/gh-pages/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.yaml"
     interval: 3600
-    path: ./startmy.yaml
+    path: ./a.yaml
     health-check:
       enable: true
       interval: 600
       # lazy: true
       url: http://www.gstatic.com/generate_204
-  
-  dadiangan:
-    type: http
-    url: "https://dadiangan.xyz/api/v1/client/subscribe?token=2e66b83f06771a39bade477c69ac4849&flag=clash"
-    interval: 3600
-    path: ./dadiangan.yaml
-    health-check:
-      enable: true
-      interval: 600
-      # lazy: true
-      url: http://www.gstatic.com/generate_204"
 
 rules:
 #广告拦截
-  - RULE-SET,clash-rules,拦截
-  - RULE-SET,anti-ad_clash,拦截
+  - RULE-SET,anti-ad_clash,REJECT
 
 #应用分流
   - PROCESS-NAME,com.tencent.mm,节点选择
-  - PROCESS-NAME,cn.gov.pbc.dcep,直连
 
 #绕过大陆
-  - GEOIP,CN,直连
+  - GEOIP,CN,DIRECT
   - MATCH,节点选择
