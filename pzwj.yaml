@@ -97,7 +97,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   a:
     type: http
-    url: "https://paste.in/raw/zKno1t"
+    url: "https://sub.xeton.dev/sub?target=clash&new_name=true&url=https%3A%2F%2Fpaste.in%2Fraw%2FzKno1t&insert=false&emoji=true&list=true&tfo=false&scv=false&fdn=false&sort=true&udp=true"
     interval: 3600
     path: ./a.yaml
     health-check:
