@@ -48,9 +48,7 @@ proxy-groups:
     use:
       - Jsnzkpg订阅
   - name: aa
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 60
+    type: select
     use:
       - a
   - name: Jsnzkpg
