@@ -43,8 +43,8 @@ proxy-groups:
       - https订阅
       - 手动代理
       - aa
-      - 破解资源军
-  - name: 破解资源军
+      - 破解资源军订阅
+  - name: 破解资源军订阅
     type: select
     use:
       - 破解资源军
