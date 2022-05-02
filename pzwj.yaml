@@ -46,7 +46,7 @@ proxy-groups:
       - 破解资源军
   - name: 破解资源军
     type: select
-    proxies:
+    use:
       - 破解资源军
   - name: Jsnzkpg订阅
     type: select
